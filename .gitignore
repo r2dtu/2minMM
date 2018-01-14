@@ -1,8 +1,8 @@
-./test/MDK-ARM
-./test/Drivers/
+MDK-ARM/
+Drivers/
 *.crf
 *.o
 *.d
-./test/.mxproject
-./test/mx.scratch
-./test/test.ioc
+.mxproject
+mx.scratch
+test.ioc
