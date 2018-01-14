@@ -1,0 +1,26 @@
+PCAD Importer Log
+Project : ULN2003ADRG3.LibPkg
+
+Section : C:\Users\Justine Lee\Documents\IEEE\Micromouse\2minMM\2minMM Libraries\ULN2003ADRG3.lia
+    Section : PCB Library - ULN2003ADRG3.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token ULN2003ADRG3 On Line 138
+            Warning - 1 : Skipping Token attachedSymbol On Line 324
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - ULN2003ADRG3.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token multiLayer On Line 84
+            Warning - 1 : Skipping Token layerContents On Line 102
+            Warning - 1 : Skipping Token layerContents On Line 129
+        EndSection
+
+        Section : Generating SCH Library - ULN2003ADRG3.SchLib
+        EndSection
+    EndSection
+EndSection

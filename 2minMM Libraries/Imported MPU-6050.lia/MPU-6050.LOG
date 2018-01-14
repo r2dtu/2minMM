@@ -1,0 +1,28 @@
+PCAD Importer Log
+Project : MPU-6050.LibPkg
+
+Section : C:\Users\Justine Lee\Documents\IEEE\Micromouse\2minMM\2minMM Libraries\MPU-6050.lia
+    Section : PCB Library - MPU-6050.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token MPU-6050 On Line 150
+            Warning - 1 : Skipping Token attachedSymbol On Line 346
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - MPU-6050.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token padStyleDef On Line 21
+            Warning - 1 : Skipping Token multiLayer On Line 96
+            Warning - 1 : Skipping Token layerContents On Line 123
+            Warning - 1 : Skipping Token layerContents On Line 131
+            Warning - 1 : Skipping Token layerContents On Line 140
+        EndSection
+
+        Section : Generating SCH Library - MPU-6050.SchLib
+        EndSection
+    EndSection
+EndSection

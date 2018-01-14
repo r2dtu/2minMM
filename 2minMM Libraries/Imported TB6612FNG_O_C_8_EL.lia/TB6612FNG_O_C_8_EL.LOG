@@ -1,0 +1,26 @@
+PCAD Importer Log
+Project : TB6612FNG_O_C_8_EL.LibPkg
+
+Section : C:\Users\Justine Lee\Documents\IEEE\Micromouse\2minMM\2minMM Libraries\TB6612FNG_O_C_8_EL.lia
+    Section : PCB Library - TB6612FNG_O_C_8_EL.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token TB6612FNG(O,C,8,EL On Line 272
+            Warning - 1 : Skipping Token attachedSymbol On Line 538
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - TB6612FNG_O_C_8_EL.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token multiLayer On Line 84
+            Warning - 1 : Skipping Token layerContents On Line 110
+            Warning - 1 : Skipping Token layerContents On Line 115
+        EndSection
+
+        Section : Generating SCH Library - TB6612FNG_O_C_8_EL.SchLib
+        EndSection
+    EndSection
+EndSection

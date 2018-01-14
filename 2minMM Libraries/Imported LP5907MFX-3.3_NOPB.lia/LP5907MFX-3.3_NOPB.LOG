@@ -1,0 +1,26 @@
+PCAD Importer Log
+Project : LP5907MFX-3.3_NOPB.LibPkg
+
+Section : C:\Users\Justine Lee\Documents\IEEE\Micromouse\2minMM\2minMM Libraries\LP5907MFX-3.3_NOPB.lia
+    Section : PCB Library - LP5907MFX-3.3_NOPB.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token LP5907MFX-3.3/NOPB On Line 118
+            Warning - 1 : Skipping Token attachedSymbol On Line 184
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - LP5907MFX-3.3_NOPB.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token multiLayer On Line 84
+            Warning - 1 : Skipping Token layerContents On Line 91
+            Warning - 1 : Skipping Token layerContents On Line 111
+        EndSection
+
+        Section : Generating SCH Library - LP5907MFX-3.3_NOPB.SchLib
+        EndSection
+    EndSection
+EndSection
