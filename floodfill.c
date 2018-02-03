@@ -1,5 +1,12 @@
 /*
+ * File: floodfill.c
+ * Author: Clark Phan & David Tu
+ * Last Updated: February 3, 2018
+ * Description: Flood-fill algorithm implementation to find the shortest path
+ *              from the center of the maze to the start.
  *
+ * TODO Notes: If we use modified flood-fill and traverse every cell
+ * in the maze, is this even necessary anymore?
  */
 
 const int size = 12; // maze size

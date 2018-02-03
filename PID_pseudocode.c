@@ -1,23 +1,27 @@
-double error_prior, integral, Kp, Ki, Kd, bias;
+/*
+ * File: PID_Control.c
+ * Author: Clark Phan & David Tu
+ * Last Updated: February 3, 2018
+ * Description: 
+ */
+
+double error_prior = 0;
+double totalError = 0;
 unsigned long iteration_time = 0;
 
-/*Set function for values*/
-void SetTunings(double kp, double Ki, double Kd, double dv, unsigned long it) {
-   Kp = kp;
-   Ki= ki;
-   Kd = kd;
-   desired_value = dv;
-   bias = b; //value <1 to prevent output from being 0
-   iteration_time = it; //time between iterations
-}
+int PID_Control() {
+  float correction;
+  float encoderError = leftEncoder.getPulses() - rightEncoder.getPulses();
+  float gyroError = gyro.read() - gyroSetPoint;
 
-while(1) {
-   error = desired_value – actual_value; //actual_value would come from sensor
-   integral = integral + (error*iteration_time);
-   derivative = (error – error_prior)/iteration_time;
-   /*output is used to check if everything is tuned well*/
-   output = Kp*error + Ki*integral + Kd*derivative + bias;
-   error_prior = error;
-   sleep(iteration_time);
+  /* Deal with both errors together, or separately? */
+
+  totalError = totalError + (error*iteration_time);
+  derivative = (error – error_prior)/iteration_time;
+  correction = Kp * error + Ki * totalError + Kd * derivative + bias;
+
+  error_prior = error;
+
+  return correction;
 }
 
