@@ -158,10 +158,28 @@ void findCenter() {
     checkForWalls(currX, currY);
 
     /* Perform Modified Floodfill Algorithm */
-    MFF();
+    MFF(currX, currY);
 
-    /* TODO: Move to next cell */
-    move( );
+    /* Move to next cell */
+    int part = getPartition(currX, currY);
+    PartitionRule rule = nextCellStrategy(part, ori);
+    Orientation dir = moveMouse(rule, ori);
+
+    /* Update current mouse position */
+    switch (dir) {
+      case NORTH:
+        currY += 1;
+        break;
+      case EAST:
+        currX += 1;
+        break;
+      case SOUTH:
+        currY -= 1;
+        break;
+      case WEST:
+        currX -= 1;
+        break;
+    }
   }
 }
 
