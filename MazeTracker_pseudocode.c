@@ -118,6 +118,8 @@ void MFF(int x, int y) {
 
     if (md != maze_cells[x][y].dist - 1) {
 
+      maze_cells[x][y].dist += 1;
+
       ff_stack[ff_counter][0] = x - 1;
       ff_stack[ff_counter][1] = y;
       ff_counter += 1;
