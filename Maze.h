@@ -14,7 +14,7 @@
  * Each square will be represented by 6 values: 4 for walls, 1 for
  * visited, and 1 for distance from center of maze (updated with MFF).
  */
-struct maze_cell {
+struct mazeCell {
   char n;
   char e;
   char s;
@@ -41,5 +41,21 @@ typedef enum {
   CR,
   CT
 } PartitionRule;
+
+
+/* Functions */
+void checkForWalls(int x, int y);
+int getMinNeighborDist(int x, int y);
+int MFF(int x, int y);
+void findCenter(struct mazeCell mazeCells[][], int * retX, int * retY,
+                    Orientation * retOri);
+void getOut(struct mazeCell mazeCells[][], int currX, int currY, 
+                Orientation ori);
+void initGrid(struct mazeCell maze[][]);
+int readGrid(struct mazeCell maze[][]);
+void writeGrid(struct mazeCell maze[][]);
+int getPartition(int x, int y, int size);
+PartitionRule nextCellStrategy(int partition, Orientation ori);
+
 
 #endif /* MAZE_H */
