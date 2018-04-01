@@ -1,4 +1,11 @@
-/* Mouse methods */
+/*
+ * File: main.c
+ * Author: David Tu
+ * Last Updated: March 31, 2018
+ * Description: Hardware compatible software to physically move the mouse 
+ * and read onboard sensors.
+ */
+#include "Maze.h"
 
 Orientation moveMouse(int x, int y, int newCellDist, Orientation ori) {
 

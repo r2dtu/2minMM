@@ -4,6 +4,7 @@
  * Last Updated: February 3, 2018
  * Description: 
  */
+#include "PID_Control.h"
 
 double error_prior = 0;
 double totalError = 0;

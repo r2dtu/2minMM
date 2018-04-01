@@ -1,3 +1,9 @@
+/*
+ * File: main.c
+ * Author: David Tu
+ * Last Updated: March 31, 2018
+ * Description: Helper methods for maze traversal.
+ */
 #include "maze.h"
 
 /* Initialize the maze distance grid. */

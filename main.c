@@ -1,3 +1,9 @@
+/*
+ * File: main.c
+ * Author: David Tu
+ * Last Updated: March 31, 2018
+ * Description: Main code running on the MM.
+ */
 #include "Maze.h"
 
 // Keep track of each maze cell (global array).
