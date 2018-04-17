@@ -4,7 +4,7 @@
  * Last Updated: March 31, 2018
  * Description: Helper methods for maze traversal.
  */
-#include "maze.h"
+#include "Maze.h"
 
 /* Initialize the maze distance grid. */
 void initGrid(struct mazeCell maze[][]) {
@@ -51,35 +51,35 @@ void writeGrid(struct mazeCell maze[][]) {
 }
 
 /* Check for surrounding walls and update the mazeCells grid. */
-void checkForWalls(int x, int y) {
+void checkForWalls(struct mazeCell maze[], int x, int y) {
 
   /* If a wall detected from any sensor, record it */
   if (detectNorthWall()) {
-    mazeCells[x][y].n = 1;
+    maze[x][y].n = 1;
 
     // Set top cell's south to 1
-    mazeCells[x][y + 1].s = 1;
+    maze[x][y + 1].s = 1;
   }
 
   if (detectEastWall()) {
-    mazeCells[x][y].e = 1;
+    maze[x][y].e = 1;
 
     // Set right cell's west to 1
-    mazeCells[x + 1][y].w = 1;
+    maze[x + 1][y].w = 1;
   }
 
   if (detectSouthWall()) {
-    mazeCells[x][y].s = 1;
+    maze[x][y].s = 1;
 
     // Set bottom cell's north to 1
-    mazeCells[x][y - 1].n = 1;
+    maze[x][y - 1].n = 1;
   }
 
   if (detectWestWall()) {
-    mazeCells[x][y].w = 1;
+    maze[x][y].w = 1;
 
     // Set left cell's east to 1
-    mazeCells[x - 1][y].e = 1;
+    maze[x - 1][y].e = 1;
   }
 }
 
@@ -113,6 +113,7 @@ int MFF(int x, int y) {
   // FF cell stack
   int ffStack[GRID_SIZE * GRID_SIZE][2];
   int ffCounter = 0;
+  int md;
 
   /* MFF Algorithm: 
    * 1. Push current cell location onto the stack.
@@ -123,7 +124,6 @@ int MFF(int x, int y) {
    */
   ffStack[ffCounter][0] = x;
   ffStack[ffCounter][1] = y;
-  int retVal = getMinNeighborDist(x, y);
 
   while (ffCounter > -1) {
 
@@ -131,11 +131,11 @@ int MFF(int x, int y) {
     y = ffStack[ffCounter][1];
     ffCounter -= 1;
 
-    int md = getMinNeighborDist(x, y);
+    md = getMinNeighborDist(x, y);
 
     if (md != mazeCells[x][y].dist - 1) {
 
-      mazeCells[x][y].dist += 1;
+      mazeCells[x][y].dist = md + 1;
 
       ffStack[ffCounter][0] = x - 1;
       ffStack[ffCounter][1] = y;
@@ -155,7 +155,7 @@ int MFF(int x, int y) {
     }
   }
 
-  return retVal;
+  return md;
 }
 
 /* Get to the center. */
@@ -168,19 +168,22 @@ void findCenter(struct mazeCell mazeCells[][], int * retX, int * retY,
   char currY = 0;
   mazeCells[currX][currY].visited = true;
 
-  /* Keeping looping while we're not at the center */
+  // Keeping looping while we're not at the center
   while (mazeCells[currX][currY].dist != 0) {
 
-    /* Check current cell for walls */
-    checkForWalls(currX, currY);
+    // Check current cell for walls if not done already
+    if (!mazeCells[currX][currY].visited) {
+      checkForWalls(currX, currY);
+      mazeCells[currX][currY].visited = 1;
+    }
 
-    /* Perform Modified Floodfill Algorithm */
+    // Perform Modified Floodfill Algorithm
     int md = MFF(currX, currY);
 
-    /* Move to next cell */
+    // Move to next cell
     ori = moveMouse(currX, currY, md, ori);
 
-    /* Update current mouse position */
+    // Update current mouse position
     switch (ori) {
       case NORTH:
         currY += 1;
@@ -197,6 +200,7 @@ void findCenter(struct mazeCell mazeCells[][], int * retX, int * retY,
     }
   }
 
+  // We have found the center!!
   *retX = currX;
   *retY = currY;
   *retOri = ori;
