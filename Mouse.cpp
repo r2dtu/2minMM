@@ -36,30 +36,37 @@ void setWalls() {
 }
 
 bool Mouse::detectNorthWall() {
-
+  /* TODO Turn on side, front facing sensors */
 }
 
 bool Mouse::detectEastWall() {
-
+  /* TODO (1 or 2)
+   * 1) Turn on side, diagonal facing sensors
+   * 2) Turn 90 deg right, turn on side, front facing sensors
+   */
 }
 
 bool Mouse::detectSouthWall() {
-
+  /* Is there really a need for this? */
 }
 
 bool Mouse::detectWestWall() {
-
+  /* TODO (1 or 2)
+   * 1) Turn on side, diagonal facing sensors
+   * 2) Turn 90 deg left, turn on side, front facing sensors
+   */
 }
 
 void Mouse::readEncoders(int * channels) {
 
 }
 
-/* irs serves as input and output parameter */
+/* IRs serves as input and output parameter */
 void Mouse::readIR(int * irs) {
 
 }
 
 void Mouse::readIMU(int * gyac) {
+
 }
 
